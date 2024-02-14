@@ -56,6 +56,8 @@ function reset(){
         box.innerText='';
         
     });
+    p1.classList.add("Highlight1");
+    p2.classList.remove("Highlight2");
     ClickedBox =[];
 }
 
