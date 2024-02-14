@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <style>
+        body{
+            background-color: aliceblue;
+        }
         table{
-            width:500px;
-            height:500px;
+            margin:10px;
+            padding: 10px;
+            background-color: rgb(36, 52, 0);
             text-align: center;
-            font-size: 50px;
+            font-size: 2.5em;
+            color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         tr,td,table{
-            border: 3px solid black;
+            border: 3px solid white;
             border-collapse: collapse;
         }
         td{
@@ -24,6 +30,25 @@
             align-items: center;
             flex-direction: column;
             justify-content: center;
+        }
+        .btn{
+            border-radius:15px ;
+            box-shadow:0 10px rgb(192, 149, 8);
+            background-color:orange;
+            color: white;
+            padding:10px;
+            margin: 10px;
+            font-size: 1.5em;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover{
+            font-size: 1.7em;
+        }
+        .btn:active{
+            transform: scale(.98);
         }
     </style>
 </head>
@@ -50,7 +75,9 @@
                 </tr>
             </table>
         </div>
-        <h3>Status:<span class="winner"></span></h3>
+        <h2>Status:</h2><span class="winner"></span>
+        <button class="btn">Reset</button>
+
     </div>
 </body>
 <script>
