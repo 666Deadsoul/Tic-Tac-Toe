@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', function () { //highlight added to
     p1.classList.add("Highlight1");
 });
 
-// document.querySelectorAll('.box').forEach(box => {
-//     box.addEventListener('click', Box_click(box));
-// });
 
 const Box_click=(box)=>{
     const p1 =document.getElementById("p1");
@@ -37,6 +34,7 @@ const Box_click=(box)=>{
         box.innerHTML= current; //for displaying O or X
         
         console.log(`${boxId}: ${ClickedBox[boxId]}`);
+
     //     // ClickedBox[boxId]=current;
     //     ClickedBox.push(current);
     //     if(ClickedBox.length == 9){
@@ -47,6 +45,7 @@ const Box_click=(box)=>{
     //         console.log(`[${i}]:${ClickedBox[i]}`);
     //     }
     //     Winner();
+
         if(Winner()){
             if(current== 'O'){
                 disp_sts.innerHTML=`Player 1 is the winner`;
@@ -55,9 +54,10 @@ const Box_click=(box)=>{
                 disp_sts.innerHTML=`Player 2 is the winner`;
             }
         }
-        // if(Draw()){
-        //     return;
-        // }
+       
+        if(Draw()){
+            disp_sts.innerHTML="Draw";
+        }
     }
     
 }   
@@ -92,6 +92,17 @@ function Winner(){
         if(ClickedBox[6]===current && ClickedBox[7]===current){ //bottom
             return true;
         }
+    }
+}
+function Draw(){
+    let count = 0;  //to count filledup space
+    ClickedBox.forEach((item, i)=>{
+        if(ClickedBox[i] !== null){
+            count++;
+        }
+    });
+    if(count === 9){
+        return true;
     }
 }
 
